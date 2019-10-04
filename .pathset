@@ -1,0 +1,45 @@
+# .pathset
+
+# リセット
+# unset PATH
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin
+# これでいつでも同じPAThになるが、、TeXみたいな変更があった時は手動で追加しないと、、
+
+# MESAの設定
+export MESASDK_ROOT=/Applications/mesasdk
+# export MESA_DIR=/Users/kohei/Software/mesa/mesa-r11554
+export MESA_DIR=/Users/kohei/Software/mesa/mesa-r12115
+export OMP_NUM_THREADS=1
+source $MESASDK_ROOT/bin/mesasdk_init.sh
+
+# rbenv
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
+export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
+
+# pycache作成禁止
+export PYTHONDONTWRITEBYTECODE=1
+
+export PATH=$PATH:/Users/kohei/.nodebrew/current/bin
+export PATH=$PATH:/Users/kohei/Software/google-cloud-sdk/bin
+
+# pyenv
+# 自動補完機能を提供
+export PYENV_ROOT=/usr/local/var/pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi 
+
+
+
+# pythonの仮想環境の作成
+export PYENV=/Users/kohei/Software/venv
+alias py3env='source $PYENV/py3env/bin/activate'
+alias py3tf='source $PYENV/tensorflow/bin/activate'
+
+# export SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk
+# export PYENV_ROOT=$HOME/.pyenv
+# export PATH=$PYENV_ROOT/bin:$PATH
+# export CFLAGS="-I$(brew --prefix openssl)/include"
+# export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix sqlite3)/lib"
+# export CPPFLAGS="-I$(brew --prefix sqlite3)/include"
+# eval "$(pyenv init -)"
