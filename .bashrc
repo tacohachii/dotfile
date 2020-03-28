@@ -23,7 +23,7 @@ else
 fi
 
 # エイリアスの設定
-alias ls='ls -FG'
+alias ls='ls -F'
 alias ll='ls -ailFG'
 alias e='emacs &'
 alias ee='emacs -nw'
@@ -32,9 +32,6 @@ alias v='vim'
 alias c='clear'
 alias relogin='exec bash -l'
 alias vs='code'
-alias rm="rm -i"
-alias mv="mv -i"
-alias cp="cp -i"
 alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
 # git系のエイリアス
 alias gb="git branch"
@@ -45,6 +42,7 @@ alias gc='git commit'
 alias gp='git push'
 alias gst='git status'
 alias ga='git add'
+alias gpoh='git push origin HEAD'
 # 頑張れるエイリアス
 alias nemui="echo 'おきろ！！おきろ！！おきろ！！おきろ！！おきろ！！'"
 alias tukareta="echo 'それな～～つかれた〜〜'"
@@ -55,8 +53,12 @@ mkcd(){
   mkdir $1 && cd $1
 }
 #かっこ自動補完
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
+#inoremap {<Enter> {}<Left><CR><ESC><S-o>
+#inoremap [<Enter> []<Left><CR><ESC><S-o>
+#inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 HISTFILE=$HOME/.bash_history
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
