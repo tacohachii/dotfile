@@ -3,32 +3,43 @@
 # リセット
 # unset PATH
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin
-# これでいつでも同じPAThになるが、、TeXみたいな変更があった時は手動で追加しないと、、
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+# これでいつでも同じPAThになる
+
+# これなんのPathだっけ
+export PATH=/opt/X11/bin:$PATH
+
+# TeXのPath
+export PATH=/Library/TeX/texbin:$PATH
+
+# これってなんのPathだっけ
+export PATH=/Users/kohei/Software/google-cloud-sdk/bin:$PATH
 
 # rbenv
 [[ -d ~/.rbenv  ]] && \
-  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  export PATH=$HOME/.rbenv/bin:$PATH && \
   eval "$(rbenv init -)"
 export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 
 # pycache作成禁止
 export PYTHONDONTWRITEBYTECODE=1
 
-export PATH=$PATH:/Users/kohei/.nodebrew/current/bin
-export PATH=$PATH:/Users/kohei/.nodebrew/current/lib/node_modules/npm/bin
-export PATH=$PATH:/Users/kohei/Software/google-cloud-sdk/bin
-
 # pyenv
 # 自動補完機能を提供
 export PYENV_ROOT=/usr/local/var/pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi 
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # pythonの仮想環境の作成
 export PYENV=/Users/kohei/Software/venv
 alias py3env='source $PYENV/py3env/bin/activate'
 alias py3tf='source $PYENV/tensorflow/bin/activate'
 
+# golangのpath
+export PATH=$HOME/.cargo/bin:$PATH
+
+# nodebrewのPath
+export PATH=/Users/kohei/.nodebrew/current/lib/node_modules/npm/bin:$PATH
+export PATH=/Users/kohei/.nodebrew/current/bin:$PATH
+
 # npmのグローバルパス
 export NODE_PATH=$(npm root -g)
-

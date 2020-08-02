@@ -131,3 +131,6 @@ augroup END
 set term=xterm-256color
 syntax on
 
+"バックアップファイルを生成しない
+set nobackup
+
